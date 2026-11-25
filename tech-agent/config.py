@@ -1,4 +1,7 @@
-import os 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Config:
      # Gemini AI Key
@@ -11,8 +14,8 @@ class Config:
     # WhatsApp Channel Link
     WHATSAPP_CHANNEL_LINK = "Follow the Tech Updates channel on WhatsApp: https://whatsapp.com/channel/0029VbDpW7S6GcGKvuwCxp3z"
 
-    #sources
-{
+    # Sources
+NEWS_SOURCES_BY_CATEGORY = {
      "pakistan": [
     "https://propakistani.pk/feed",
     "https://www.techjuice.pk/feed",
@@ -84,3 +87,10 @@ class Config:
      "http://export.arxiv.org/rss/stat.ML",
      ],
 }
+
+config = Config()
+config.NEWS_SOURCES = tuple(
+    url
+    for sources in NEWS_SOURCES_BY_CATEGORY.values()
+    for url in sources
+)

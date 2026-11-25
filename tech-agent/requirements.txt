@@ -1,0 +1,5 @@
+flask
+feedparser
+google-generativeai
+gunicorn
+python-dotenv
