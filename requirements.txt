@@ -1,4 +1,0 @@
-flask
-feedparser
-google-generativeai
-gunicorn
